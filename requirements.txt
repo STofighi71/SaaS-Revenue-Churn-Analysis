@@ -1,0 +1,15 @@
+jupyterlab
+jupyterlab-dash
+matplotlib
+numpy
+pandas
+seaborn
+pingouin
+scipy
+plotly.express 
+scikit-learn
+shap
+sqlalchemy
+jupyter 
+openpyxl
+faker
