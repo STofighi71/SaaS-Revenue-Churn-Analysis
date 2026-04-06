@@ -1,0 +1,12 @@
+timestamp,table,issue,rows_affected,action
+2026-04-05 21:20:13.530364,accounts,duplicate_rows,5,removed duplicates
+2026-04-05 21:20:13.570423,usage_events,duplicate_rows,50,removed duplicates
+2026-04-05 21:20:13.573302,support_tickets,duplicate_rows,28,removed duplicates
+2026-04-05 21:20:13.578733,invoices,duplicate_rows,20,removed duplicates
+2026-04-05 21:20:13.592434,accounts,account_manager,15,filled with 'Unknown'
+2026-04-05 21:20:13.626980,usage_events,usage_count,100,filled with 0
+2026-04-05 21:20:13.638536,support_tickets,account_id,242,filled with median
+2026-04-05 21:20:13.654004,invoices,discount_code,1497,filled with 'No_Discount'
+2026-04-05 21:20:13.671710,renewals,orphaned_account_id,10,removed records without valid account
+2026-04-05 21:20:13.682004,invoices,paid_before_invoice,20,corrected paid_date
+2026-04-05 21:20:13.686176,invoices,currency_conversion,3019,USD converted to EUR

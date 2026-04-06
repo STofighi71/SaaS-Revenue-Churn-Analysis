@@ -13,3 +13,4 @@ sqlalchemy
 jupyter 
 openpyxl
 faker
+sqlite3 
