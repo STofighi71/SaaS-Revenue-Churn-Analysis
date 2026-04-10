@@ -231,41 +231,6 @@ Cards:
 
 ------------------------------------------------------------------------
 
-### Page 4 --- Customer Behavior
-
-Visualizations:
-
-Product Usage vs ARR (Scatter Plot)
-
-Support Tickets vs Renewal Outcome
-
-Churn Rate by Tier
-
-Purpose:
-
-Identify behavioral patterns associated with churn.
-
-------------------------------------------------------------------------
-
-### Page 5 --- Churn Drivers
-
-Visualizations:
-
-Lost ARR by Region
-
-Customer risk table with:
-
--   ARR
--   usage
--   ticket volume
--   renewal outcome
-
-Purpose:
-
-Detect high-risk customer segments.
-
-------------------------------------------------------------------------
-
 # Power BI Measures
 
 Examples of measures created:
@@ -342,8 +307,6 @@ python scripts/eda_analysis.py
 
 5.  Open Power BI dashboard
 
-dashboard/saas_dashboard.pbix
-
 ------------------------------------------------------------------------
 
 # Portfolio Value
@@ -356,8 +319,6 @@ This project demonstrates:
 -   Python data analysis
 -   Power BI dashboard development
 -   End-to-end analytics workflow
-
-It is designed as a **portfolio project for data analyst roles**.
 
 ------------------------------------------------------------------------
 
