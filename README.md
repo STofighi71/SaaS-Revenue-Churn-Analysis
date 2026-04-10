@@ -2,209 +2,362 @@
 
 ## Project Overview
 
-This project simulates a full end-to-end analytics workflow for a B2B SaaS company selling subscription licenses across four product tiers and three global regions.
+This project analyzes customer renewal behavior and revenue retention
+for a fictional B2B SaaS company. The goal is to understand **customer
+churn, revenue expansion, contraction, and retention patterns** using a
+full data analytics workflow.
 
-The objective of the analysis is to identify the drivers behind declining renewal rates and rising support costs and provide actionable insights for executive leadership before a board meeting.
+The project demonstrates the following skills:
 
-The entire project was built from scratch, including synthetic data generation, automated data cleaning pipelines, analytical modeling, churn prediction, and an executive dashboard.
+-   Data generation and preparation with Python
+-   Exploratory Data Analysis (EDA)
+-   SaaS revenue metric calculations
+-   Data modeling (Star Schema)
+-   Business KPI analysis
+-   Interactive dashboard development in Power BI
+-   Documentation and portfolio-ready repository structure
 
----
+------------------------------------------------------------------------
 
-# Project Structure
+# Business Objectives
 
-```
-saas-revenue-churn-analysis
+The analysis focuses on answering several business questions commonly
+asked in SaaS companies:
 
-Data/
-    Raw/
-    Cleaned/
+1.  How much revenue is retained from existing customers?
+2.  What percentage of revenue expansion comes from upsells?
+3.  Which customers or tiers experience the highest churn?
+4.  Is customer product usage related to renewal probability?
+5.  Do support tickets correlate with churn risk?
+6.  Which segments generate the highest revenue growth?
 
-Scripts/
-    Data_Generation.py
-    Cleaning_Pipeline.py
+------------------------------------------------------------------------
 
-Notebooks/
-    01_Data_Cleaning.ipynb
-    Analysis.ipynb
+# Key SaaS Metrics Used
 
-SQL/
-    queries.sql
+## ARR (Annual Recurring Revenue)
 
-Power-BI-Dashboard/
-    dashboard.pbix
+Total yearly subscription revenue from customers.
 
-Outputs/
-    Figures/
-    Tables/
+## Net ARR
 
-churn_risk_register.xlsx
-assumptions_log.md
-requirements.txt
-README.md
-```
+Revenue change from the same customer base.
 
----
+## Expansion ARR
 
-# Data Generation
+Additional revenue gained from existing customers upgrading or expanding
+usage.
 
-Since no real data was provided, all datasets were programmatically generated using Python.
+## Contraction ARR
 
-The script creates six interconnected datasets:
+Revenue lost when customers downgrade their subscription.
 
-• accounts
-• usage_events
-• support_tickets
-• invoices
-• renewals
-• nps_survey
+## Churn ARR
 
-Real-world data quality issues were intentionally embedded, including:
+Revenue lost from customers who cancel.
 
-* Duplicate records
-* Missing values with different patterns
-* Inconsistent categorical values
-* Orphaned foreign keys
-* Impossible date relationships
-* Currency inconsistencies
+## NRR (Net Revenue Retention)
 
-This ensures that the project realistically reflects common challenges in production analytics environments.
+Formula:
 
----
+NRR = (Starting ARR + Expansion ARR - Contraction ARR - Churn ARR) /
+Starting ARR
 
-# Data Cleaning Pipeline
+NRR measures how much revenue is retained from existing customers.
 
-A fully automated Python pipeline audits and cleans all datasets.
+------------------------------------------------------------------------
 
-The pipeline performs:
+# Project Workflow
 
-* Data quality auditing
-* Duplicate detection and removal
-* Missing value handling
-* Categorical normalization
-* Foreign key validation
-* Currency normalization (USD → EUR)
-* Date validation
+## STEP 1 --- Data Generation (Python)
 
-Clean datasets are exported to:
+Synthetic SaaS datasets were generated to simulate realistic company
+data.
 
-```
-Data/Cleaned/
-```
+Datasets created:
 
----
+-   customers
+-   subscriptions
+-   renewals
+-   product usage
+-   support tickets
+-   account metadata
 
-# Data Modeling
+Python libraries used:
 
-The cleaned data is modeled using a **star schema** in SQLite to support analytical queries.
+-   pandas
+-   numpy
 
-Key SQL analyses include:
+Output files were exported as CSV files for further analysis.
 
-* Rolling 12-month ARR
-* Month-over-month churn rate
-* Cohort retention analysis
-* Days Sales Outstanding (DSO)
-* Support-driven downgrade analysis
+------------------------------------------------------------------------
 
----
+## STEP 2 --- Data Preparation
 
-# Exploratory Data Analysis
+Data cleaning tasks included:
 
-The analysis notebook includes:
+-   Checking missing values
+-   Verifying ARR calculations
+-   Removing duplicates
+-   Standardizing column names
+-   Ensuring correct data types
 
-* Univariate and bivariate analysis
-* Correlation analysis
-* Usage segmentation
-* NPS analysis with non-response bias discussion
+Prepared datasets were stored in a structured format for analytics.
 
-More than 10 publication-quality visualizations are included with clear business interpretation.
+------------------------------------------------------------------------
 
----
+## STEP 3 --- Data Modeling
 
-# KPI Engineering
+A **Star Schema** was implemented for analysis.
 
-Key SaaS metrics were calculated, including:
+Fact Tables:
 
-* ARR / MRR
-* Net Revenue Retention
-* Gross Revenue Retention
-* Churn Rate
-* Average Contract Value
-* Expansion Revenue
-* LTV/CAC proxy
-* Support Ticket Rate
-* Days Sales Outstanding
-* NPS by segment
+-   renewals
+-   usage
+-   support_tickets
 
----
+Dimension Tables:
 
-# Churn Prediction Model
+-   customers
+-   tiers
+-   regions
+-   time
 
-A machine learning model was developed to identify accounts most likely to churn.
+Relationships were created in Power BI Model View.
 
-Steps included:
+This structure improves:
 
-* Feature engineering from multiple datasets
-* Training multiple models
-* Evaluation using ROC-AUC and precision-recall
-* Feature importance analysis
+-   query performance
+-   analytical flexibility
+-   dashboard clarity
 
-The final output is a ranked list of the **top 20 accounts most at risk of churn in the next 90 days.**
+------------------------------------------------------------------------
 
----
+# STEP 4 --- Advanced Exploratory Data Analysis (Python)
 
-# Dashboard
+EDA was performed to explore patterns across all datasets.
 
-An interactive dashboard was built in Power BI including:
+## Univariate Analysis
 
-• Executive KPI overview
-• Churn risk monitoring
-• Revenue health analysis
-• Cohort retention heatmap
-• Support-renewal correlation
+Distribution analysis of:
 
----
+-   ARR
+-   product usage
+-   support ticket counts
+-   customer tiers
 
-# Key Business Questions Addressed
+## Bivariate Analysis
 
-The project answers critical leadership questions such as:
+Relationships explored between:
 
-* Which product tier has the highest churn?
-* Is there a usage threshold predicting churn?
-* Do high-support accounts renew less often?
-* Which region has the worst payment behavior?
-* Can NPS reliably predict renewal outcomes?
+-   product usage vs renewal outcome
+-   support tickets vs churn
+-   tier vs ARR
 
----
+## Correlation Analysis
+
+Examined correlation between:
+
+-   support ticket volume
+-   churn likelihood
+
+------------------------------------------------------------------------
+
+# STEP 5 --- Power BI Dashboard
+
+An interactive dashboard was created to visualize key SaaS KPIs.
+
+## Dashboard Pages
+
+### Page 1 --- Executive Overview
+
+Key KPIs:
+
+-   Total ARR
+-   Net Revenue Retention
+-   Expansion ARR
+-   Contraction ARR
+-   Churn ARR
+
+Visualizations:
+
+-   ARR distribution by tier
+-   ARR by region
+-   ARR growth summary
+
+Purpose:
+
+Provide executives with a quick view of revenue health.
+
+------------------------------------------------------------------------
+
+### Page 2 --- Revenue Breakdown
+
+Visualizations:
+
+-   ARR by product tier
+-   ARR by region
+-   Customer count by segment
+
+Purpose:
+
+Identify high-value segments and revenue sources.
+
+------------------------------------------------------------------------
+
+### Page 3 --- Revenue Movements
+
+Visualizations:
+
+ARR Movement Waterfall Chart
+
+Components:
+
+-   Starting ARR
+-   Expansion ARR
+-   Contraction ARR
+-   Churn ARR
+-   Ending ARR
+
+Purpose:
+
+Explain how revenue changes over time.
+
+Cards:
+
+-   Expansion ARR
+-   Contraction ARR
+-   Churn ARR
+
+------------------------------------------------------------------------
+
+### Page 4 --- Customer Behavior
+
+Visualizations:
+
+Product Usage vs ARR (Scatter Plot)
+
+Support Tickets vs Renewal Outcome
+
+Churn Rate by Tier
+
+Purpose:
+
+Identify behavioral patterns associated with churn.
+
+------------------------------------------------------------------------
+
+### Page 5 --- Churn Drivers
+
+Visualizations:
+
+Lost ARR by Region
+
+Customer risk table with:
+
+-   ARR
+-   usage
+-   ticket volume
+-   renewal outcome
+
+Purpose:
+
+Detect high-risk customer segments.
+
+------------------------------------------------------------------------
+
+# Power BI Measures
+
+Examples of measures created:
+
+### Expansion ARR
+
+SUM of additional ARR gained from renewals.
+
+### Contraction ARR
+
+SUM of ARR lost from downgrades.
+
+### Churn ARR
+
+SUM of ARR lost from cancellations.
+
+### Net ARR
+
+Expansion ARR - Contraction ARR - Churn ARR
+
+### NRR
+
+NRR = DIVIDE( SUM(renewals\[new_arr\]), SUM(renewals\[previous_arr\]) )
+
+------------------------------------------------------------------------
+
+# Key Insights
+
+Example findings from the analysis:
+
+-   Customers with low product usage are more likely to churn.
+-   Higher support ticket volume may indicate product friction.
+-   Enterprise tier generates the majority of ARR.
+-   Expansion revenue significantly offsets contraction losses.
+
+
+------------------------------------------------------------------------
+
+# Tools Used
+
+Python
+
+Libraries:
+
+-   pandas
+-   numpy
+-   matplotlib
+
+BI Tool:
+
+Power BI
+
+Version control:
+
+Git + GitHub
+
+------------------------------------------------------------------------
 
 # How to Run the Project
 
-1. Install dependencies
+1.  Clone the repository
 
-```
-pip install -r requirements.txt
-```
+2.  Install dependencies
 
-2. Generate data
+pip install pandas numpy matplotlib
 
-```
-python Scripts/Data_Generation.py
-```
+3.  Run data generation script
 
-3. Run cleaning pipeline
+python scripts/data_generation.py
 
-```
-python Scripts/Cleaning_Pipeline.py
-```
+4.  Perform EDA analysis
 
-4. Run analysis notebook
+python scripts/eda_analysis.py
 
-```
-jupyter notebook Notebooks/Analysis.ipynb
-```
+5.  Open Power BI dashboard
 
----
+dashboard/saas_dashboard.pbix
 
-# Author
+------------------------------------------------------------------------
 
-Data Analytics Portfolio Project
-End-to-end SaaS Revenue & Churn Analysis.
+# Portfolio Value
+
+This project demonstrates:
+
+-   SaaS KPI analytics
+-   Revenue retention analysis
+-   Customer churn analysis
+-   Python data analysis
+-   Power BI dashboard development
+-   End-to-end analytics workflow
+
+It is designed as a **portfolio project for data analyst roles**.
+
+------------------------------------------------------------------------
+
