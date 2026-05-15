@@ -263,7 +263,7 @@ NRR = DIVIDE( SUM(renewals\[new_arr\]), SUM(renewals\[previous_arr\]) )
 
 
 
-![Executive Overview](assets/executive_overview.jpg)
+![Executive Overview](Assets/executive_overview.jpg)
 
 ---
 
@@ -271,7 +271,8 @@ NRR = DIVIDE( SUM(renewals\[new_arr\]), SUM(renewals\[previous_arr\]) )
 
 
 
-![Churn Risk & Renewal](assets/churn_risk_renewal.jpg)
+
+![Churn Risk & Renewal](Assets/churn_risk_renewal.jpg)
 
 ---
 
@@ -279,7 +280,7 @@ NRR = DIVIDE( SUM(renewals\[new_arr\]), SUM(renewals\[previous_arr\]) )
 
 
 
-![Revenue Health](assets/revenue_health.jpg)
+![Revenue Health](Assets/revenue_health.jpg)
 
 ---
 
@@ -287,7 +288,7 @@ NRR = DIVIDE( SUM(renewals\[new_arr\]), SUM(renewals\[previous_arr\]) )
 
 
 
-![Customer Retention](assets/customer_retention.jpg)
+![Customer Retention](Assets/customer_retention.jpg)
 
 ---
 
@@ -295,7 +296,7 @@ NRR = DIVIDE( SUM(renewals\[new_arr\]), SUM(renewals\[previous_arr\]) )
 
 
 
-![Insights & Recommendations](assets/insights_recommendations.jpg)
+![Insights & Recommendations](Assets/insights_recommendations.jpg)
 
 ------------------------------------------------------------------------
 
