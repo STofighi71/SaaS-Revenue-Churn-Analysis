@@ -133,7 +133,7 @@ This structure improves:
 
 ------------------------------------------------------------------------
 
-# STEP 4 --- Advanced Exploratory Data Analysis (Python)
+## STEP 4 --- Advanced Exploratory Data Analysis (Python)
 
 EDA was performed to explore patterns across all datasets.
 
@@ -163,7 +163,7 @@ Examined correlation between:
 
 ------------------------------------------------------------------------
 
-# STEP 5 --- Power BI Dashboard
+## STEP 5 --- Power BI Dashboard
 
 An interactive dashboard was created to visualize key SaaS KPIs.
 
