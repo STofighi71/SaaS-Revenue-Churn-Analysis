@@ -330,25 +330,6 @@ Version control:
 
 Git + GitHub
 
-------------------------------------------------------------------------
-
-# How to Run the Project
-
-1.  Clone the repository
-
-2.  Install dependencies
-
-pip install pandas numpy matplotlib
-
-3.  Run data generation script
-
-python scripts/data_generation.py
-
-4.  Perform EDA analysis
-
-python scripts/eda_analysis.py
-
-5.  Open Power BI dashboard
 
 ------------------------------------------------------------------------
 
