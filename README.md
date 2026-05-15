@@ -257,6 +257,48 @@ NRR = DIVIDE( SUM(renewals\[new_arr\]), SUM(renewals\[previous_arr\]) )
 
 ------------------------------------------------------------------------
 
+# Dashboard Preview
+
+## Executive Overview
+
+
+
+![Executive Overview](assets/executive_overview.jpg)
+
+---
+
+## Churn Risk & Renewal Analysis
+
+
+
+![Churn Risk & Renewal](assets/churn_risk_renewal.jpg)
+
+---
+
+## Revenue Health
+
+
+
+![Revenue Health](assets/revenue_health.jpg)
+
+---
+
+## Customer Retention
+
+
+
+![Customer Retention](assets/customer_retention.jpg)
+
+---
+
+## Insights & Recommendations
+
+
+
+![Insights & Recommendations](assets/insights_recommendations.jpg)
+
+------------------------------------------------------------------------
+
 # Key Insights
 
 Example findings from the analysis:
